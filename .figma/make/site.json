@@ -1,0 +1,12 @@
+{
+  "title": "Asociación de Lupus El Salvador",
+  "description": "Información, apoyo y comunidad para personas que viven con lupus en El Salvador.",
+  "language": "es",
+  "robots": {
+    "index": true
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
