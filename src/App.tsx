@@ -1,22 +1,28 @@
 import { useState, useEffect } from "react";
+import portada from "./imports/portada.jpeg";
+import talleres from "./imports/talleres.jpeg";
+import capacitaciones from "./imports/capacitaciones.jpeg";
+import campana from "./imports/campana.jpeg";
+import pacientesParticipantes from "./imports/pacientes-participantes.jpeg";
+import soyElRostro from "./imports/soy-el-rostro-de-lupus.jpeg";
 
 /* ─── constants ─── */
 const HERO_SLIDES = [
   {
-    url: "https://images.unsplash.com/photo-1698341484377-4a6e546867b2?w=1600&h=900&fit=crop&auto=format",
-    alt: "Mujer con vestido blanco en un campo, símbolo de esperanza",
+    url: portada,
+    alt: "Portada oficial de la Asociación de Lupus El Salvador",
     heading: "No estás sol@ frente al Lupus",
     sub: "Información, apoyo y comunidad para personas con lupus en El Salvador.",
   },
   {
-    url: "https://images.unsplash.com/photo-1785133127744-536d16b7a6ca?w=1600&h=900&fit=crop&auto=format",
-    alt: "Mujer libre corriendo en campo verde",
+    url: campana,
+    alt: "Campaña de sensibilización sobre el lupus",
     heading: "Vivir con Lupus es posible",
     sub: "Con el tratamiento correcto y una comunidad que te acompaña, la vida continúa.",
   },
   {
-    url: "https://images.unsplash.com/photo-1572478836938-5bac4407a723?w=1600&h=900&fit=crop&auto=format",
-    alt: "Mujer en vestido blanco al amanecer",
+    url: soyElRostro,
+    alt: "Campaña Soy el Rostro de Lupus",
     heading: "Juntos somos más fuertes",
     sub: "Únete a la comunidad de guerreros del Lupus en El Salvador.",
   },
@@ -349,15 +355,15 @@ const MISSION_ITEMS = [
     title: "COORDINAR ESFUERZOS",
     text: "Trabajamos en red a nivel nacional articulando a pacientes, médicos, hospitales y asociaciones para mejorar la calidad de vida de quienes viven con lupus en El Salvador. Somos miembros de redes internacionales de enfermedades autoinmunes.",
     side: "left",
-    img: "https://images.unsplash.com/photo-1551290261-8e26c0dc4ac5?w=800&h=600&fit=crop&auto=format",
-    alt: "Mariposa en la mano — símbolo del lupus",
+    img: capacitaciones,
+    alt: "Capacitación de la Asociación de Lupus El Salvador",
   },
   {
     num: "02.",
     title: "FORMAR E INFORMAR",
     text: "Uno de nuestros objetivos más importantes es brindar formación a pacientes y familias. Desde 2015 realizamos jornadas informativas, talleres y contenido digital para empoderar a nuestra comunidad con conocimiento actualizado.",
     side: "right",
-    img: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?w=800&h=600&fit=crop&auto=format",
+    img: talleres,
     alt: "Taller informativo para pacientes y familias",
   },
   {
@@ -365,8 +371,8 @@ const MISSION_ITEMS = [
     title: "OFRECER APOYO",
     text: "Brindamos información veraz sobre tratamientos, derechos del paciente y recursos disponibles en el sistema de salud salvadoreño. Realizamos campañas de sensibilización para dar a conocer una enfermedad que afecta a miles de salvadoreños.",
     side: "left",
-    img: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop&auto=format",
-    alt: "Grupo de apoyo acompañando a pacientes",
+    img: pacientesParticipantes,
+    alt: "Pacientes participantes de la asociación",
   },
 ];
 
@@ -768,6 +774,44 @@ function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+const FUENTES = [
+  { grupo: "Lupus y enfermedades autoinmunes", items: [
+    "Lupus Foundation of America",
+    "Hospital for Special Surgery (HSS) – Lupus Center",
+    "Johns Hopkins Lupus Center",
+    "American College of Rheumatology",
+    "European Alliance of Associations for Rheumatology (EULAR)",
+  ]},
+  { grupo: "Información médica basada en evidencia", items: [
+    "MedlinePlus (National Library of Medicine)",
+    "Centers for Disease Control and Prevention (CDC)",
+    "World Health Organization (WHO)",
+    "Mayo Clinic",
+    "Cleveland Clinic",
+  ]},
+];
+
+function Fuentes() {
+  return (
+    <section id="fuentes" className="py-12 bg-white border-t border-gray-100">
+      <div className="max-w-5xl mx-auto px-4">
+        <h2 className="text-2xl font-black uppercase text-gray-800 tracking-wide text-center mb-2">FUENTES DE INFORMACIÓN</h2>
+        <div className="w-12 h-1 bg-purple-700 mx-auto mb-8" />
+        <div className="grid md:grid-cols-2 gap-8">
+          {FUENTES.map((f) => (
+            <div key={f.grupo}>
+              <h3 className="font-bold text-purple-800 text-sm uppercase tracking-wide mb-3">{f.grupo}</h3>
+              <ul className="text-sm text-gray-600 space-y-1 list-disc list-inside">
+                {f.items.map((i) => <li key={i}>{i}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
