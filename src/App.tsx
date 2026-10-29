@@ -7,6 +7,11 @@ import pacientesParticipantes from "./imports/pacientes-participantes.jpeg";
 import soyElRostro from "./imports/soy-el-rostro-de-lupus.jpeg";
 import logo from "./imports/logo-fundalupus.png";
 import logoBlanco from "./imports/logo-fundalupus-blanco.png";
+import jornadas from "./imports/jornadas.jpg";
+import noticia from "./imports/noticia.jpeg";
+import evento from "./imports/evento.jpeg";
+import evento2 from "./imports/evento-2.jpeg";
+import charlas from "./imports/charlas.jpeg";
 
 /* ─── constants ─── */
 const HERO_SLIDES = [
@@ -381,31 +386,37 @@ function ElLupus() {
 const SERVICIOS = [
   {
     icon: (
-      <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
       </svg>
     ),
     title: "JORNADAS LOCALES",
+    img: charlas,
+    alt: "Charla de la Asociación de Lupus El Salvador",
     desc: "Jornadas de salud, talleres y actividades de sensibilización que realizamos en diferentes departamentos de El Salvador.",
     bg: "bg-primary-400",
   },
   {
     icon: (
-      <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     ),
     title: "GRUPOS DE APOYO",
+    img: evento,
+    alt: "Evento de la Asociación de Lupus El Salvador",
     desc: "Grupos de apoyo para pacientes con lupus en todo El Salvador, con sus datos de contacto y horarios de reunión.",
     bg: "bg-primary-500",
   },
   {
     icon: (
-      <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
       </svg>
     ),
     title: "DÍA DEL LUPUS",
+    img: evento2,
+    alt: "Evento del Día del Lupus",
     desc: "El evento más importante a nivel internacional. Únete a nuestra celebración anual cada 10 de mayo.",
     bg: "bg-primary-700",
   },
@@ -418,14 +429,19 @@ function Servicios() {
         <SectionTitle title="¿Cómo te apoyamos?" />
         <div className="grid md:grid-cols-3 gap-6">
           {SERVICIOS.map((card) => (
-            <div key={card.title} className={`${card.bg} text-white rounded-3xl p-9 flex flex-col gap-4 shadow-lg hover:-translate-y-1.5 hover:shadow-2xl transition-all`}>
-              <div className="w-16 h-16 rounded-2xl bg-white/15 flex items-center justify-center">{card.icon}</div>
+            <div key={card.title} className={`${card.bg} text-white rounded-3xl overflow-hidden flex flex-col shadow-lg hover:-translate-y-1.5 hover:shadow-2xl transition-all`}>
+              <div className="relative h-48">
+                <img src={card.img} alt={card.alt} className="w-full h-full object-cover" />
+                <div className={`absolute -bottom-8 left-8 w-16 h-16 rounded-2xl ${card.bg} border-4 border-white flex items-center justify-center`}>{card.icon}</div>
+              </div>
+              <div className="p-8 pt-12 flex flex-col gap-4 flex-1">
               <h3 className="font-extrabold uppercase tracking-wide text-lg">{card.title}</h3>
               <p className="text-primary-50/90 text-sm leading-relaxed flex-1">{card.desc}</p>
               <a href="#contacto" className="inline-flex items-center gap-2 text-white font-bold uppercase tracking-widest text-xs mt-2 group">
                 Más información
                 <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </a>
+              </div>
             </div>
           ))}
         </div>
@@ -602,13 +618,13 @@ const NOTICIAS = [
   {
     date: "15 AGO",
     title: "Jornada de sensibilización sobre lupus en el Hospital Nacional Rosales",
-    img: "https://images.unsplash.com/photo-1606206591513-adbfbdd7a177?w=600&h=400&fit=crop&auto=format",
-    alt: "Jornada médica de lupus",
+    img: jornadas,
+    alt: "Jornada de sensibilización sobre lupus",
   },
   {
     date: "02 AGO",
     title: "Lupus y fotosensibilidad: cómo protegerte en el verano salvadoreño",
-    img: "https://images.unsplash.com/photo-1561490497-b47f5576e1f0?w=600&h=400&fit=crop&auto=format",
+    img: noticia,
     alt: "Información sobre lupus y sol",
   },
 ];
