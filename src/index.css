@@ -1,15 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+/* Tipografías del Brand Book: Poppins (principal) y Montserrat (secundaria). */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&display=swap');
 @import 'tailwindcss';
+
+/* Paleta primaria oficial FundaLupus El Salvador.
+   400–800 son los colores de marca; 50–300 y 900 son tonos derivados para fondos y overlays. */
+@theme {
+  --color-primary-50: #fdf0f8;
+  --color-primary-100: #f9d6ec;
+  --color-primary-200: #f0aad6;
+  --color-primary-300: #e470b8;
+  --color-primary-400: #df008a;
+  --color-primary-500: #b30176;
+  --color-primary-600: #893168;
+  --color-primary-700: #8e0265;
+  --color-primary-800: #6a2555;
+  --color-primary-900: #3f1533;
+
+  --font-sans: 'Poppins', system-ui, sans-serif;
+  --font-secondary: 'Montserrat', system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 html, body, #root {
   height: 100%;
 }
 
 body {
-  font-family: 'Poppins', system-ui, sans-serif;
-  color: #222;
+  font-family: var(--font-sans);
+  color: #2a1a24;
+}
+
+/* Títulos, menú y botones van en Poppins; el texto corrido en Montserrat. */
+@layer base {
+  p, li, input, textarea {
+    font-family: var(--font-secondary);
+  }
+}
+
+section[id] {
+  scroll-margin-top: 4rem;
 }
 
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #9333ea; border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: var(--color-primary-700); border-radius: 3px; }
