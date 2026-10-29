@@ -5,6 +5,12 @@ import capacitaciones from "./imports/capacitaciones.jpeg";
 import campana from "./imports/campana.jpeg";
 import pacientesParticipantes from "./imports/pacientes-participantes.jpeg";
 import soyElRostro from "./imports/soy-el-rostro-de-lupus.jpeg";
+import logo from "./imports/logo.png";
+import jornadas from "./imports/jornadas.jpg";
+import noticia from "./imports/noticia.jpeg";
+import evento2 from "./imports/evento-2.jpeg";
+import charlas from "./imports/charlas.jpeg";
+import evento from "./imports/evento.jpeg";
 
 /* ─── constants ─── */
 const HERO_SLIDES = [
@@ -106,13 +112,7 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
         {/* Logo */}
         <a href="#inicio" className="flex items-center gap-2 flex-shrink-0">
-          <svg className="w-10 h-10" viewBox="0 0 80 60" fill="none">
-            <path d="M40 30 C30 10 5 8 8 28 C11 45 30 40 40 30Z" fill="#7c3aed" opacity="0.85"/>
-            <path d="M40 30 C50 10 75 8 72 28 C69 45 50 40 40 30Z" fill="#a855f7" opacity="0.75"/>
-            <path d="M40 30 C32 42 18 55 22 58 C26 61 35 50 40 30Z" fill="#7c3aed" opacity="0.9"/>
-            <path d="M40 30 C48 42 62 55 58 58 C54 61 45 50 40 30Z" fill="#a855f7" opacity="0.8"/>
-            <circle cx="40" cy="30" r="3" fill="#4c1d95"/>
-          </svg>
+          <img src={logo} alt="Logo de la Asociación de Lupus El Salvador" className="h-10 w-auto" />
           <div className="leading-tight">
             <div className="text-xs text-purple-500 font-semibold uppercase tracking-wider">Asociación de</div>
             <div className="text-purple-800 font-bold text-lg leading-none">Lupus El Salvador</div>
@@ -295,13 +295,13 @@ const NOTICIAS = [
   {
     date: "15 AGO:",
     title: "JORNADA DE SENSIBILIZACIÓN SOBRE LUPUS EN EL HOSPITAL NACIONAL ROSALES",
-    img: "https://images.unsplash.com/photo-1606206591513-adbfbdd7a177?w=600&h=400&fit=crop&auto=format",
-    alt: "Jornada médica de lupus",
+        img: jornadas,
+    alt: "Jornada de sensibilización sobre lupus",
   },
   {
     date: "02 AGO:",
     title: "LUPUS Y FOTOSENSIBILIDAD: CÓMO PROTEGERTE EN EL VERANO SALVADOREÑO",
-    img: "https://images.unsplash.com/photo-1561490497-b47f5576e1f0?w=600&h=400&fit=crop&auto=format",
+    img: noticia,
     alt: "Información sobre lupus y sol",
   },
 ];
@@ -419,9 +419,7 @@ function Mision() {
 const PURPLE_CARDS = [
   {
     icon: (
-      <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-      </svg>
+      <img src={charlas} alt="Charla de la Asociación de Lupus El Salvador" className="w-full h-full object-cover opacity-80" />
     ),
     title: "JORNADAS LOCALES",
     desc: "Información sobre jornadas de salud, talleres y actividades de sensibilización que realizamos en diferentes departamentos de El Salvador.",
@@ -429,9 +427,7 @@ const PURPLE_CARDS = [
   },
   {
     icon: (
-      <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
+      <img src={evento} alt="Evento de la Asociación de Lupus El Salvador" className="w-full h-full object-cover opacity-70" />
     ),
     title: "GRUPOS DE APOYO",
     desc: "Aquí encontrarás los grupos de apoyo para pacientes con Lupus en todo El Salvador junto con sus datos de contacto y horarios de reunión.",
